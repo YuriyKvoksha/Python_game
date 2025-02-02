@@ -1,29 +1,38 @@
 from Character import *
+
+#def druid_creation(character_name):
+ #   druid  = Druid(character_name)
+  #  print("Druid created sucseful!")
+
+       # f'World hello , {druid.lvl}lvl {druid.experience}exp  {druid.hp}hp, {druid.mana}mana, {druid.dd}dd {druid.manaMoon}manaMoon '
+
+
 if __name__ == '__main__':
-    Splitnight = Mag(200)
-    Splitnight.name = "Splitnight"
-    Splitnight.hp = 3300
-    Splitnight.lvl = 26
-    Splitnight.mana = 130
-    Splitnight.dd = 600
-    print(Splitnight.name)
-    Lonellyday = Druid(300)
-    Lonellyday.name = "Lonelyday"
-    Lonellyday.hp = 5500
-    Lonellyday.lvl = 32
-    Lonellyday.mana = 120
-    Lonellyday.dd = 900
-    Lonellyday.fight(Splitnight, Splitnight.hp)
-    Lonellyday.moon_domage(Splitnight)
-    print(Lonellyday.name)
+    is_alive = True
+    druid_name = input("Input druid name ")
+    druid = Druid(druid_name)
 
-    def print_hi(name):
-        # Use a breakpoint in the code line below to debug your script.
-        print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+    # mag_name = input("Input mag name ")
+    mag_name = "Splitnight"
+    mag = Mag(mag_name)
+    print(f'World hello druid {druid.name}! {druid.lvl}lvl {druid.experience}exp  {druid.hp}hp, {druid.mana}mana, {druid.dd}dd {druid.mana_moon}mana_moon ')
+    print(f'World hello mag {mag.name}! {mag.lvl}lvl {mag.experience}exp  {mag.hp}hp, {mag.mana}mana, {mag.dd}dd {mag.mana_sun}mana_sun ')
+    def displey_info(character):
+        print(f'World hello mag {character.name}! {character.lvl}lvl {character.experience}exp  {character.hp}hp, {character.mana}mana, {character.dd}dd ')
 
+    while is_alive:
+        if mag.hp <=0 or druid.hp <=0:
+            is_alive = False
 
+        druid.auto_attack(mag)
+        mag.auto_attack(druid)
+        druid.moon_damage(mag)
+        mag.sun_damage(druid)
+
+    print(f'World hello druid {druid.name}! {druid.lvl}lvl {druid.experience}exp  {druid.hp}hp, {druid.mana}mana, {druid.dd}dd {druid.mana_moon}mana_moon ')
+    print(f'World hello mag {mag.name}! {mag.lvl}lvl {mag.experience}exp  {mag.hp}hp, {mag.mana}mana, {mag.dd}dd {mag.mana_sun}mana_sun ')
     # Press the green button in the gutter to run the script.
 
-        print_hi('PyCharm')
+
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
