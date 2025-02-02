@@ -1,5 +1,5 @@
 class Character:
-    LVL_UP_CONST = 10
+    LVL_UP_CONST = 20
     #const for lvl_up
     def __init__(self, name, lvl =1 ,experience = 0 , hp = 1000,mana= 120, dd= 100):
         self.name = name
@@ -44,7 +44,7 @@ class Druid(Character):
 
 
 class Mag(Character):
-
+    # skill druid damage moon
     def sun_damage(self, character):
         if self.hp >= 0:
             if self.mana >=20:
