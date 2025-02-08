@@ -3,9 +3,7 @@ from Character import *
 if __name__ == '__main__':
     def displey_info(character):
         print(f'Hero  {character.name}! {character.lvl}lvl {character.experience}exp  {character.hp}hp, {character.mana}mana, {character.dd}dd ')
-    def dead_detected(characters):
 
-                return False
 
     druid_name = input("Input druid name ")
     druid = Druid(druid_name)
